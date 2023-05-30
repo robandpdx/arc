@@ -2,8 +2,7 @@
 ## Install ARC
 ```
 NAMESPACE="arc-systems"
-helm install -f values-arc.yaml \
-    arc \
+helm install arc \
     --namespace "${NAMESPACE}" \
     --create-namespace \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
@@ -18,6 +17,15 @@ helm install -f values-admin-ops.yaml \
     --namespace "${NAMESPACE}" \
     --create-namespace \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
+```
+
+## Check it out
+Use these commands the check the status of the installation.  
+```
+helm list -A
+kubectl get pods -n arc-systems
+kubectl get pods -n arc-runners
+kubectl logs arc-gha-runner-scale-set-controller-dfb85c57d-tc22x -n arc-systems
 ```
 
 ## Uninstall runner sets
