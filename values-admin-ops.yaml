@@ -1,0 +1,5 @@
+githubConfigUrl: https://github.com/robandpdx-admin-ops
+githubConfigSecret: arc-robandpdx-admin-ops
+maxRunners: 16
+minRunners: 8
+runnerScaleSetName: "runner-scale-set-robandpdx-admin-ops"
