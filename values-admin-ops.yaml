@@ -4,3 +4,9 @@ maxRunners: 16
 minRunners: 8
 runnerScaleSetName: "self-hosted"
 runnerGroup: "self-hosted"
+template:
+  spec:
+    containers:
+    - name: runner
+      image: ghcr.io/robandpdx/actions-runner:latest
+      command: ["/home/runner/run.sh"]
