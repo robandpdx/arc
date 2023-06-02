@@ -25,7 +25,7 @@ Use these commands the check the status of the installation.
 helm list -A
 kubectl get pods -n arc-systems
 kubectl get pods -n arc-runners
-kubectl logs arc-gha-runner-scale-set-controller-dfb85c57d-tc22x -n arc-systems
+kubectl logs -n arc-systems arc-gha-runner-scale-set-controller-dfb85c57d-tc22x
 ```
 
 ## Uninstall runner sets
