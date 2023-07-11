@@ -1,0 +1,12 @@
+githubConfigUrl: https://github.com/robandpdx-admin-ops
+githubConfigSecret: arc-robandpdx-admin-ops
+maxRunners: 16
+minRunners: 8
+runnerScaleSetName: "ghes-migration"
+runnerGroup: "self-hosted"
+template:
+  spec:
+    containers:
+    - name: runner
+      image: ghcr.io/robandpdx/actions-runner:latest
+      command: ["/home/runner/run.sh"]
