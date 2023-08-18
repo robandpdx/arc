@@ -75,3 +75,8 @@ helm uninstall runners-ghes-migration --namespace arc-runners
 ```
 helm uninstall arc --namespace arc-systems
 ```
+
+## Refresh runner image
+When I build a new runner image becuase I need to add a dependency, I need to uninstall and reinstall the runners.
+
+The `refresh.sh` script will uninstall and reinstall the runners.
