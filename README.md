@@ -1,6 +1,13 @@
 # arc
 Below are some TLDR notes about installing Actions Runner Controller (ARC) in a k8s cluster. These commands all came from the [Quickstart for Actions Runner Controller](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/quickstart-for-actions-runner-controller)  
 
+## Create the arc-runners namespace
+First create the `arc-runners` namespace in k8s.
+```
+kubectl create namespace arc-runners
+```
+
+
 ## Create some secrets in k8s
 Create a file called `setenv.sh` with the following content...
 ```
