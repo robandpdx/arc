@@ -1,6 +1,17 @@
 # arc
 Below are some TLDR notes about installing Actions Runner Controller (ARC) in a k8s cluster. These commands all came from the [Quickstart for Actions Runner Controller](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/quickstart-for-actions-runner-controller)  
 
+## Create local k8s cluster
+Install [kind](https://kind.sigs.k8s.io/):
+```
+brew install kind
+```
+
+Create k8s cluster:
+```
+kind create cluster --config kind-config.yaml
+```
+
 ## Create the arc-runners namespace
 First create the `arc-runners` namespace in k8s.
 ```
