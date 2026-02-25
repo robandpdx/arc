@@ -1,9 +1,9 @@
 githubConfigUrl: https://github.com/robandpdx-admin-ops
 githubConfigSecret: arc-robandpdx-admin-ops
-maxRunners: 16
-minRunners: 8
-runnerScaleSetName: "self-hosted"
-runnerGroup: "self-hosted"
+maxRunners: 1
+minRunners: 1
+runnerScaleSetName: "issue-runner"
+runnerGroup: "issue-runner"
 template:
   spec:
     containers:

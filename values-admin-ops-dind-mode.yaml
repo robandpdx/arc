@@ -4,9 +4,16 @@ maxRunners: 16
 minRunners: 8
 runnerScaleSetName: "self-hosted"
 runnerGroup: "self-hosted"
+containerMode:
+  type: "dind"
 template:
   spec:
     containers:
       - name: runner
         image: ghcr.io/robandpdx/actions-runner:2.331.0
         command: ["/home/runner/run.sh"]
+        env:
+          - name: DOCKER_HOST
+            value: unix:///var/run/docker.sock
+          - name: RUNNER_WAIT_FOR_DOCKER_IN_SECONDS
+            value: "120"

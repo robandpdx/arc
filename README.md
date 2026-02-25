@@ -74,6 +74,17 @@ helm install -f values-ghes-migration.yaml \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 ```
 
+issue runners for testing
+```
+INSTALLATION_NAME="runners-issue-runner"
+NAMESPACE="arc-runners"
+helm install -f values-issue-runner.yaml \
+    "${INSTALLATION_NAME}" \
+    --namespace "${NAMESPACE}" \
+    --create-namespace \
+    oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
+```
+
 ## Check it out
 Use these commands the check the status of the installation.  
 ```

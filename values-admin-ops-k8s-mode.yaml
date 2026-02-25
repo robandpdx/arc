@@ -1,0 +1,27 @@
+githubConfigUrl: https://github.com/robandpdx-admin-ops
+githubConfigSecret: arc-robandpdx-admin-ops
+maxRunners: 16
+minRunners: 8
+runnerScaleSetName: "self-hosted"
+runnerGroup: "self-hosted"
+containerMode:
+  type: "kubernetes"
+  kubernetesModeWorkVolumeClaim:
+    accessModes: ["ReadWriteOnce"]
+    storageClassName: "default"
+    resources:
+      requests:
+        storage: 10Gi
+template:
+  spec:
+    securityContext:
+      fsGroup: 1001
+    containers:
+      - name: runner
+        image: ghcr.io/robandpdx/actions-runner:2.331.0
+        command: ["/home/runner/run.sh"]
+        securityContext:
+          runAsUser: 1001
+        env:
+          - name: ACTIONS_RUNNER_REQUIRE_JOB_CONTAINER
+            value: "false"
