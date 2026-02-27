@@ -18,7 +18,7 @@ template:
       fsGroup: 1001
     containers:
       - name: runner
-        image: ghcr.io/robandpdx/actions-runner:2.331.0
+        image: ghcr.io/robandpdx/actions-runner:2.332.0
         command: ["/home/runner/run.sh"]
         securityContext:
           runAsUser: 1001
