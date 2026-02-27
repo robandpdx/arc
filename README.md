@@ -49,6 +49,7 @@ NAMESPACE="arc-systems"
 helm install arc \
     --namespace "${NAMESPACE}" \
     --create-namespace \
+    --version "0.13.1" \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller
 ```
 
@@ -60,6 +61,7 @@ helm install -f values-admin-ops.yaml \
     "${INSTALLATION_NAME}" \
     --namespace "${NAMESPACE}" \
     --create-namespace \
+    --version "0.13.1" \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 ```
 
@@ -71,6 +73,7 @@ helm install -f values-ghes-migration.yaml \
     "${INSTALLATION_NAME}" \
     --namespace "${NAMESPACE}" \
     --create-namespace \
+    --version "0.13.1" \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 ```
 
@@ -82,6 +85,19 @@ helm install -f values-issue-runner.yaml \
     "${INSTALLATION_NAME}" \
     --namespace "${NAMESPACE}" \
     --create-namespace \
+    --version "0.13.1" \
+    oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
+```
+
+install runners in robandpdx-auto
+```
+INSTALLATION_NAME="runners-auto"
+NAMESPACE="arc-runners"
+helm install -f values-auto.yaml \
+    "${INSTALLATION_NAME}" \
+    --namespace "${NAMESPACE}" \
+    --create-namespace \
+    --version "0.13.1" \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 ```
 
